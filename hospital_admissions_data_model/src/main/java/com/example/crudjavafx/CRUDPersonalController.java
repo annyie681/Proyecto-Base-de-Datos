@@ -58,6 +58,10 @@ public class CRUDPersonalController {
         listaObservable = FXCollections.observableArrayList(manejadorPersonalDB.getPersonalPS());
         tablaPersonal.setItems(listaObservable);
 
+        boolean tieneContenido = !listaObservable.isEmpty();
+        tablaPersonal.setVisible(tieneContenido);
+        tablaPersonal.setManaged(tieneContenido);
+
         tablaPersonal.getSelectionModel().selectedItemProperty().addListener((obs, oldSel, newSel)->{
             if (newSel != null) { cargarSeleccionado(newSel); }
         });
@@ -135,6 +139,10 @@ public class CRUDPersonalController {
 
         listaObservable.setAll(manejadorPersonalDB.getPersonalPorFiltroPS(nombreFiltro, apellidoFiltro, puestoFiltro, categoriaFiltro, fechaNacFiltro, generoFiltro, activoFiltro));
 
+        boolean tieneContenido = !listaObservable.isEmpty();
+        tablaPersonal.setVisible(tieneContenido);
+        tablaPersonal.setManaged(tieneContenido);
+
         if (listaObservable.isEmpty()) {
             mostrarAlerta("No se encontró personal con los filtros proporcionados", "Aviso", Alert.AlertType.INFORMATION);
         }
@@ -155,6 +163,11 @@ public class CRUDPersonalController {
     @FXML
     private void recargarDatos() {
         listaObservable.setAll(manejadorPersonalDB.getPersonalPS());
+
+        boolean tieneContenido = !listaObservable.isEmpty();
+        tablaPersonal.setVisible(tieneContenido);
+        tablaPersonal.setManaged(tieneContenido);
+
         limpiarForm();
     }
 

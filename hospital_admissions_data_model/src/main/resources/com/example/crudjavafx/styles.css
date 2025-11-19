@@ -1,0 +1,38 @@
+
+/* styles.css */
+
+/* 1. Estilo para el Menú (usando prueba_background.png) - Ya existente */
+.menu-vbox {
+    -fx-background-image: url("image/prueba_background.png");
+    -fx-background-size: cover;
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+}
+
+/* 2. NUEVO ESTILO para el Login (usando login_background.png) */
+.login-background {
+    -fx-background-image: url("image/login_background.png");
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center center;
+}
+
+.relacionDireccion-background {
+    -fx-background-image: url("image/module_background.png");
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center center;
+}
+
+.full-background {
+    -fx-background-image: url("image/full_background.png");
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center center;
+}
+
+.header-label {
+    -fx-text-fill: white;
+}
+
+

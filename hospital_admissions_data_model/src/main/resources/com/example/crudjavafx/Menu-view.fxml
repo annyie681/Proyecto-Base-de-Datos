@@ -1,66 +1,131 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="TOP_CENTER" prefHeight="600.0" prefWidth="500.0" spacing="20.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.crudjavafx.MenuController">
+<VBox alignment="TOP_CENTER" prefHeight="600.0" prefWidth="750.0" spacing="20.0" styleClass="menu-vbox" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.crudjavafx.MenuController">
+    <stylesheets>
+        <URL value="@styles.css" />
+    </stylesheets>
     <children>
-        <Label text="MENÚ PRINCIPAL" VBox.vgrow="NEVER">
+        <Pane prefHeight="66.0" prefWidth="466.0">
+            <children>
+
+                <Label layoutX="11.0" layoutY="9.0" text="MENÚ PRINCIPAL">
+                    <font>
+                        <Font name="Century Gothic Bold Italic" size="30.0" />
+                    </font>
+                    <textFill>
+                        <LinearGradient endX="0.5488958870198825" endY="1.0" startX="0.20504729905715124" startY="0.2429021841344021">
+                            <stops>
+                                <Stop>
+                                    <color>
+                                        <Color red="0.2561728358268738" green="0.9504114985466003" blue="1.0" />
+                                    </color>
+                                </Stop>
+                                <Stop offset="0.006711409395973154">
+                                    <color>
+                                        <Color red="0.2561728358268738" green="0.9504114985466003" blue="1.0" />
+                                    </color>
+                                </Stop>
+                                <Stop offset="1.0">
+                                    <color>
+                                        <Color red="0.8734567761421204" green="0.9915637969970703" blue="1.0" />
+                                    </color>
+                                </Stop>
+                            </stops>
+                        </LinearGradient>
+                    </textFill>
+                    <padding>
+                        <Insets bottom="30.0" left="30.0" right="30.0" top="135.0" />
+                    </padding>
+                </Label>
+            </children>
+        </Pane>
+        <Pane prefHeight="164.0" prefWidth="710.0">
+            <children>
+
+                <GridPane alignment="CENTER" hgap="20.0" layoutX="-18.0" layoutY="31.0" prefHeight="314.0" prefWidth="750.0" vgap="15.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" percentWidth="50.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" percentWidth="50.0" />
+                    </columnConstraints>
+
+                    <Button fx:id="btnPacientes" mnemonicParsing="false" onAction="#abrirCRUD" prefHeight="40.0" prefWidth="300.0" style="-fx-base: #2980b9;" text="1. Pacientes" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                        <font>
+                            <Font name="Century Gothic Bold" size="18.0" />
+                        </font>
+                    </Button>
+                    <Button fx:id="btnPersonal" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#abrirCRUD" prefHeight="40.0" prefWidth="300.0" style="-fx-base: #27ae60;" text="2. Personal (Staff)" textFill="WHITE" GridPane.columnIndex="1">
+                        <font>
+                            <Font name="Century Gothic Bold" size="18.0" />
+                        </font>
+                    </Button>
+
+                    <Button fx:id="btnDirecciones" mnemonicParsing="false" onAction="#abrirCRUD" prefHeight="40.0" prefWidth="300.0" style="-fx-base: #f39c12;" text="3. Direcciones" textFill="WHITE" GridPane.rowIndex="1">
+                        <font>
+                            <Font name="Century Gothic Bold" size="18.0" />
+                        </font>
+                    </Button>
+                    <Button fx:id="btnFacturas" mnemonicParsing="false" onAction="#abrirCRUD" prefHeight="40.0" prefWidth="300.0" style="-fx-base: #e74c3c;" text="4. Facturas (Bills)" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                        <font>
+                            <Font name="Century Gothic Bold" size="18.0" />
+                        </font>
+                    </Button>
+
+                    <Button fx:id="btnItemsFactura" mnemonicParsing="false" onAction="#abrirCRUD" prefHeight="40.0" prefWidth="300.0" style="-fx-base: #9b59b6;" text="5. Ítems de Factura" textFill="WHITE" GridPane.rowIndex="2">
+                        <font>
+                            <Font name="Century Gothic Bold" size="18.0" />
+                        </font>
+                    </Button>
+                    <Button fx:id="btnEstancias" mnemonicParsing="false" onAction="#abrirCRUD" prefHeight="40.0" prefWidth="300.0" style="-fx-base: #1abc9c;" text="6. Estancias (Rooms)" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                        <font>
+                            <Font name="Century Gothic Bold" size="18.0" />
+                        </font>
+                    </Button>
+
+                    <Button fx:id="btnComponentes" mnemonicParsing="false" onAction="#abrirCRUD" prefHeight="40.0" prefWidth="300.0" style="-fx-base: #f1c40f;" text="7. Catálogo Componentes" textFill="WHITE" GridPane.rowIndex="3">
+                        <font>
+                            <Font name="Century Gothic Bold" size="18.0" />
+                        </font>
+                    </Button>
+                    <Button fx:id="btnRelacionesDir" mnemonicParsing="false" onAction="#abrirCRUD" prefHeight="40.0" prefWidth="300.0" style="-fx-base: #34495e;" text="8. Historial de Direcciones" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                        <font>
+                            <Font name="Century Gothic Bold" size="18.0" />
+                        </font>
+                    </Button>
+                    <rowConstraints>
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                    </rowConstraints>
+                    <padding>
+                        <Insets bottom="60.0" left="60.0" right="60.0" top="85.0" />
+                    </padding>
+
+                </GridPane>
+            </children>
+        </Pane>
+
+        <Label text="*El menú principal se ocultará al abrir un módulo y regresará al cerrarlo." textFill="WHITE">
+            <padding>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="180.0" />
+            </padding>
             <font>
-                <Font name="Cooper Black" size="30.0" />
-            </font>
-            <VBox.margin>
-                <Insets top="30.0" />
-            </VBox.margin>
-        </Label>
-        <Label text="Seleccione el módulo a gestionar:" VBox.vgrow="NEVER">
-            <font>
-                <Font size="14.0" />
-            </font>
-        </Label>
-
-        <GridPane hgap="20.0" vgap="15.0" alignment="CENTER">
-            <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" percentWidth="50.0" />
-                <ColumnConstraints hgrow="SOMETIMES" percentWidth="50.0" />
-            </columnConstraints>
-
-            <Button fx:id="btnPacientes" mnemonicParsing="false" onAction="#abrirCRUD" prefHeight="40.0" prefWidth="200.0" style="-fx-base: #2980b9;" text="1. Pacientes" GridPane.columnIndex="0" GridPane.rowIndex="0">
-                <font><Font name="Copperplate Gothic Bold" size="13.0" /></font>
-            </Button>
-            <Button fx:id="btnPersonal" mnemonicParsing="false" onAction="#abrirCRUD" prefHeight="40.0" prefWidth="200.0" style="-fx-base: #27ae60;" text="2. Personal (Staff)" GridPane.columnIndex="1" GridPane.rowIndex="0">
-                <font><Font name="Copperplate Gothic Bold" size="13.0" /></font>
-            </Button>
-
-            <Button fx:id="btnDirecciones" mnemonicParsing="false" onAction="#abrirCRUD" prefHeight="40.0" prefWidth="200.0" style="-fx-base: #f39c12;" text="3. Direcciones" GridPane.columnIndex="0" GridPane.rowIndex="1">
-                <font><Font name="Copperplate Gothic Bold" size="13.0" /></font>
-            </Button>
-            <Button fx:id="btnFacturas" mnemonicParsing="false" onAction="#abrirCRUD" prefHeight="40.0" prefWidth="200.0" style="-fx-base: #e74c3c;" text="4. Facturas (Bills)" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                <font><Font name="Copperplate Gothic Bold" size="13.0" /></font>
-            </Button>
-
-            <Button fx:id="btnItemsFactura" mnemonicParsing="false" onAction="#abrirCRUD" prefHeight="40.0" prefWidth="200.0" style="-fx-base: #9b59b6;" text="5. Ítems de Factura" GridPane.columnIndex="0" GridPane.rowIndex="2">
-                <font><Font name="Copperplate Gothic Bold" size="13.0" /></font>
-            </Button>
-            <Button fx:id="btnEstancias" mnemonicParsing="false" onAction="#abrirCRUD" prefHeight="40.0" prefWidth="200.0" style="-fx-base: #1abc9c;" text="6. Estancias (Rooms)" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                <font><Font name="Copperplate Gothic Bold" size="13.0" /></font>
-            </Button>
-
-            <Button fx:id="btnComponentes" mnemonicParsing="false" onAction="#abrirCRUD" prefHeight="40.0" prefWidth="200.0" style="-fx-base: #f1c40f;" text="7. Catálogo Componentes" GridPane.columnIndex="0" GridPane.rowIndex="3">
-                <font><Font name="Copperplate Gothic Bold" size="13.0" /></font>
-            </Button>
-            <Button fx:id="btnRelacionesDir" mnemonicParsing="false" onAction="#abrirCRUD" prefHeight="40.0" prefWidth="200.0" style="-fx-base: #34495e;" text="8. Historial de Direcciones" GridPane.columnIndex="1" GridPane.rowIndex="3">
-                <font><Font name="Copperplate Gothic Bold" size="13.0" /></font>
-            </Button>
-
-        </GridPane>
-
-        <Label text="*El menú principal se ocultará al abrir un módulo y regresará al cerrarlo." textFill="#606060" />
+                <Font name="Century Gothic Italic" size="12.0" />
+            </font></Label>
     </children>
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
